@@ -57,7 +57,7 @@ public class WriteRepository<T> : IWriteRepository<T> where T : BaseEntity
         EntityEntry<T> entityEntry = Table.Update(model);
         return entityEntry.State == EntityState.Modified;
     }
-    public async Task<int> SaveAsync(T model) => await _context.SaveChangesAsync();
+    public async Task<int> SaveAsync() => await _context.SaveChangesAsync();
 
 
 }
